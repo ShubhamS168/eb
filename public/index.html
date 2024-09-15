@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Query Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: calc(100% - 22px);
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .results h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        #queryResult {
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+            color: #333;
+        }
+        .voice-recog {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .voice-recog button {
+            background-color: #28a745;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+        .voice-recog button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Retail Query Assistant</h1>
+        <form id="queryForm">
+            <label for="queryInput">Enter your query:</label>
+            <input type="text" id="queryInput" name="query" placeholder="Type your query here..." required>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="voice-recog">
+            <button id="voiceBtn">🎤 Start Voice Recognition</button>
+        </div>
+        <div class="results" id="results">
+            <h2>Results:</h2>
+            <pre id="queryResult"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
